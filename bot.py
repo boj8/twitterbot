@@ -2,11 +2,12 @@ import tweepy
 import textmanager
 import time
 from datetime import datetime
+from os import environ
 
-keys = textmanager.getTwitterKeys()
+#keys = textmanager.getTwitterKeys()
 
-auth = tweepy.OAuthHandler(keys[0], keys[1])
-auth.set_access_token(keys[2], keys[3])
+auth = tweepy.OAuthHandler(environ['CONSUMER_KEY'], environ['CONSUMER_SECRET'])
+auth.set_access_token(environ['ACCESS_KEY'], environ['ACCESS_SECRET'])
 
 api = tweepy.API(auth)
 count = 0
