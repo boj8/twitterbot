@@ -18,7 +18,7 @@ while True:
         print('Too long:')
         print(sentence)
         sentence = textmanager.getRandomSentence()
-    if count == 5:
+    if count == 2:
         count = 0
         tweet = api.home_timeline()[0]
         api.update_status('@' + tweet.user.screen_name + ' ' + sentence, in_reply_to_status_id=tweet.id)
